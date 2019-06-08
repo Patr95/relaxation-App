@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.app{
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    .vid-container{
+        video{
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            min-width: 100%; 
+            min-height: 100%;
+            z-index: -10;
+        }
+    }
+    .time-select{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 80%;
+        flex: 1;
+        button{
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 20px;
+            color: white;
+            background: none;
+            border: 2px solid white;
+            cursor: pointer;
+            &:hover{
+                color: black;
+                background: white;
+                transition: all 0.5s ease;
+            }
+        }
+    }
+    .sound-picker{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 80%;
+        flex: 1;
+        button{
+            padding: 10px;
+            border-radius: 50%;
+            font-size: 20px;
+            color: white;
+            background: none;
+            border: 2px solid white;
+            cursor: pointer;
+            &:hover{
+                background: black;
+                transition: all 0.5s ease;
+            }
+        }
+    }
+    .player-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 80%;
+        flex: 1;
+        position: relative;
+        svg{
+            position: absolute;
+            height: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-90deg);
+            pointer-events: none;
+        }
+        .time-display{
+            position: absolute;
+            bottom: 10%;
+            color: white;
+            font-size: 50px;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .app{
+        display: list-item;
+        .time-select{
+            height: 20%;
+            flex-direction: row;
+        }  
+        .sound-picker{
+            height: 20%;
+            flex-direction: row;
+        }
+        .player-container{
+            height: 55%;
+        }
+    }
+    
+}
